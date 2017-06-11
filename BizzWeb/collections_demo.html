@@ -1,0 +1,894 @@
+<!doctype html>
+<!--[if IE 8]><html class="ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <link rel="shortcut icon" href="//bizweb.dktcdn.net/assets/admin/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Tiến Diễn | Danh mục sản phẩm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="csrf-param" content="AuthenticityToken">
+    <link href="css/dist/default.min.css" rel="stylesheet" />
+    <link href="assets/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" />
+    
+    <style>
+        .btn.btn-more {
+            border: 1px solid #d3dbe2;
+            padding: 6px 15px;
+        }
+
+        .btn.btn-more:hover {
+            border: 1px solid #d3dbe2;
+            background-color: #f5f6f7;
+            color: #479ccf;
+            text-decoration: none;
+        }
+
+        .btn-more:before {
+            content: "•••";
+            text-indent: 0;
+            display: block;
+            font-size: 13px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="/themes/portal/admin/assets/libs/html5shiv/html5shiv.min.js"></script>
+    <script src="/themes/portal/admin/assets/libs/respond/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var currentDate = new Date(2017, 5, 12, 3, 28, 46, 644);
+        setInterval(function() {
+            currentDate.setMinutes(currentDate.getMinutes() + 1);
+        }, 60000);
+
+        function addDOMLoadedEvent(func) {
+            if (document.readyState === 'complete') {
+                func();
+            } else {
+                if (document.addEventListener) {
+                    document.addEventListener("DOMContentLoaded", func, false);
+                } else {
+                    document.attachEvent("onDOMContentLoaded", func);
+                }
+            }
+        }
+
+        function addLoadEvent(func) {
+            if (document.readyState === 'complete') {
+                func();
+            } else {
+                var oldonload = window.onload;
+                if (typeof window.onload != 'function') {
+                    window.onload = func;
+                } else {
+                    window.onload = function() {
+                        if (oldonload) {
+                            oldonload();
+                        }
+                        func();
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+        (function(e, a) {
+            if (!a.__SV) {
+                var b = window;
+                try {
+                    var c, l, i, j = b.location,
+                        g = j.hash;
+                    c = function(a, b) {
+                        return (l = a.match(RegExp(b + "=([^&]*)"))) ? l[1] : null
+                    };
+                    g && c(g, "state") && (i = JSON.parse(decodeURIComponent(c(g, "state"))), "mpeditor" === i.action && (b.sessionStorage.setItem("_mpcehash", g), history.replaceState(i.desiredHash || "", e.title, j.pathname + j.search)))
+                } catch (m) {}
+                var k, h;
+                window.mixpanel = a;
+                a._i = [];
+                a.init = function(b, c, f) {
+                    function e(b, a) {
+                        var c = a.split(".");
+                        2 == c.length && (b = b[c[0]], a = c[1]);
+                        b[a] = function() {
+                            b.push([a].concat(Array.prototype.slice.call(arguments, 0)))
+                        }
+                    }
+                    var d = a;
+                    "undefined" !== typeof f ? d = a[f] = [] : f = "mixpanel";
+                    d.people = d.people || [];
+                    d.toString = function(b) {
+                        var a = "mixpanel";
+                        "mixpanel" !== f && (a += "." + f);
+                        b || (a += " (stub)");
+                        return a
+                    };
+                    d.people.toString = function() {
+                        return d.toString(1) + ".people (stub)"
+                    };
+                    k = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                    for (h = 0; h < k.length; h++) e(d, k[h]);
+                    a._i.push([b, c, f])
+                };
+                a.__SV = 1.2;
+                b = e.createElement("script");
+                b.type = "text/javascript";
+                b.async = !0;
+                b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+                c = e.getElementsByTagName("script")[0];
+                c.parentNode.insertBefore(b, c)
+            }
+        })(document, window.mixpanel || []);
+        mixpanel.init("0f08d90a63da4ef9c0d778b2a7679f0a");
+    </script>
+    <!-- end Mixpanel -->
+</head>
+
+<body class="">
+    <div class="page-wrapper">
+        <div class="page-wrapper-sub">
+            <aside class="sidebar sidebar-default" define="{navDrawer: new Bizweb.Drawer(this)}">
+                <div class="header-logo">
+                    <a class="navbar-logo" href="/admin/dashboard"> <span>
+                <img src="/assets/images/bizweb-new-logo.png" title="Bizweb" style="width:115px;">
+            </span> </a>
+                    <a class="view-storefront" href="http://tien-dien.bizwebvietnam.net" target="_blank" title="Xem website của bạn"> <i class="fa fa-lg fa-external-link"></i> </a>
+                </div>
+                <div class="next-nav ">
+                    <div class="next-nav__panel next-nav__panel--primary next-nav__panel--has-scrollbars" id="sidebar--nav">
+                        <nav>
+                            <ul class="nav nav-pills nav-stacked next-nav__list next-nav__list--primary">
+                                <li class="">
+                                    <a href="/admin/dashboard"> <i class="text-muted-mod fa fa-lg fa-fw fa-home"></i> <span class="menu-name">Trang chủ</span> <span class="tooltip-menu"><i></i>Trang chủ</span> </a>
+                                </li>
+                                <li class="has-submenu ">
+                                    <a href="javascript:void(0)" bind-event-click="navDrawer.showSubMenu(this)" data-name="orders"> <i class="text-muted-mod fa fa-lg fa-fw fa-credit-card"></i> <span class="menu-name">Đơn hàng</span> <span class="tooltip-menu"><i></i>Đơn hàng</span> <span class="show-opening-order clearfix"><span class="label label-opening-order pull-right opening-order" bind="navDrawer.numOfOpenningOrder" bind-show="navDrawer.numOfOpenningOrder > 0"></span><span class="tooltip_opening_order" bind-show="navDrawer.numOfOpenningOrder > 0"><i></i>Đơn hàng đang xử lý</span></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="/admin/products"> <i class="text-muted-mod fa fa-lg fa-fw fa-tag"></i> <span class="menu-name">Sản phẩm</span> <span class="tooltip-menu"><i></i>Sản phẩm</span> </a>
+                                </li>
+                                <li class="active menu-is-selected">
+                                    <a href="/admin/collections"> <i class="text-muted-mod fa fa-lg fa-fw fa-tags"></i> <span class="menu-name">Danh mục sản phẩm</span> <span class="tooltip-menu"><i></i>Danh mục sản phẩm</span> </a>
+                                </li>
+                                <li class="">
+                                    <a href="/admin/customers"> <i class="text-muted-mod fa fa-lg fa-fw fa-users"></i> <span class="menu-name">Khách hàng</span> <span class="tooltip-menu"><i></i>Khách hàng</span> </a>
+                                </li>
+                                <li class="">
+                                    <a href="/admin/discounts" title="Khuyến mãi"> <i class="text-muted-mod fa fa-lg fa-fw fa-volume-up"></i> <span class="menu-name">Khuyến mãi</span> <span class="tooltip-menu"><i></i>Khuyến mãi</span> </a>
+                                </li>
+                                <li class="separate"></li>
+                                <li class="has-submenu ">
+                                    <a href="javascript:void(0)" bind-event-click="navDrawer.showSubMenu(this)" data-name="website"> <i class="text-muted-mod fa fa-lg fa-fw fa-globe" aria-hidden="true"></i> <span class="menu-name">Website</span> <span class="tooltip-menu"><i></i>Website</span> </a>
+                                </li>
+                                <li class="separate"></li>
+                                <li class="">
+                                    <a href="/admin/apps"> <i class="text-muted fa fa-lg fa-fw fa-cubes"></i> <span class="menu-name">Ứng dụng</span> <span class="tooltip-menu"><i></i>Ứng dụng</span> </a>
+                                </li>
+                                <style>
+                                    .hideSaleChannel {
+                                        display: none !important;
+                                    }
+                                </style>
+                                <div id="global-icon-symbols" data-tg-refresh="global-icon-symbols" data-tg-refresh-always="true" style="display: none;">
+                                    <svg xmlns="http://www.w3.org/2000/svg">
+                                        <symbol id="next-ellipsis">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <circle cx="2.769" cy="12" r="2.769" />
+                                                <circle cx="12" cy="12" r="2.769" />
+                                                <circle cx="21.231" cy="12" r="2.769" />
+                                            </svg>
+                                        </symbol>
+                                    </svg>
+                                </div>
+                                <li class=" slide-bar-more-2-item-1">
+                                    <a href="/admin/settings/files"> <i class="text-muted-mod fa fa-lg fa-fw fa-folder-open"></i> <span class="menu-name">File</span> <span class="tooltip-menu"><i></i>File</span> </a>
+                                </li>
+                                <li class="has-submenu ">
+                                    <a href="javascript:void(0)" bind-event-click="navDrawer.showSubMenu(this)" data-name="settings"> <i class="text-muted-mod fa fa-lg fa-fw fa-cogs"></i> <span class="menu-name">Cấu hình</span> <span class="tooltip-menu"><i></i>Cấu hình</span> </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="next-nav__panel next-nav__panel--secondary  ">
+                        <ol class="next-nav__list next-nav__list--secondary " data-nav-section="orders" id="NextNavOrders">
+                            <li class="next-nav__item next-nav__item--header" aria-hidden="true">
+                                <h3 class="next-heading--callout clearfix">Đơn hàng <a style="float:right" href="javascript:void(0)" bind-event-click="navDrawer.closeSubMenu()"><span><i class="fa fa-bars close-submenu" aria-hidden="true"></i></span></a></h3> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/orders">Danh sách đơn hàng</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/shipments">Phiếu giao hàng</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/shipments/cod">Quản lý COD</a> </li>
+                        </ol>
+                        <ol class="next-nav__list next-nav__list--secondary " data-nav-section="website" id="NextNavWebsite">
+                            <li class="next-nav__item next-nav__item--header" aria-hidden="true">
+                                <h3 class="next-heading--callout">Website <a style="float:right" href="javascript:void(0)" bind-event-click="navDrawer.closeSubMenu()"><span><i class="fa fa-bars close-submenu" aria-hidden="true"></i></span></a></h3> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/articles">Blog</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/pages">Trang nội dung</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/links">Menu</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/themes">Giao diện</a> </li>
+                        </ol>
+                        <ol class="next-nav__list next-nav__list--secondary " data-nav-section="settings" id="NextNavSettings">
+                            <li class="next-nav__item next-nav__item--header" aria-hidden="true">
+                                <h3 class="next-heading--callout">Cấu hình <a style="float:right" href="javascript:void(0)" bind-event-click="navDrawer.closeSubMenu()"><span><i class="fa fa-bars close-submenu" aria-hidden="true"></i></span></a></h3> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/store">Cấu hình chung</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/notifications">Thông báo</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/payments">Phương thức thanh toán</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/checkout">Trang thanh toán</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/shipping">Vận chuyển</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/addresses">Địa chỉ cửa hàng</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/domains">Tên miền</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/account">Tài khoản</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/channels">Kênh bán hàng</a> </li>
+                            <li class="next-nav__item"> <a class="next-nav__link " href="/admin/settings/plans">Gói dịch vụ</a> </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="nav-user">
+                    <div class="account-info">
+                        <a href="javascript:void(0)" title="Cấu hình" style="padding: 10px 10px 10px 20px;" data-toggle="collapse" data-target="#list-action-user" id="show-action-user"> <img class="profile-pic img-circle" data-name="Diễn "> <img style="position: absolute; top: 10px; left: 20px;" class="profile-pic-gravatar img-circle" src="https://secure.gravatar.com/avatar/e06703c9568bbde10c2f9ded1f0b060c.jpg?s=45&amp;d=blank"> <span style="margin-left:5px">Tiến Diễn</span> <span id="caret-menu-user"><i class="fa fa-angle-up caret-menu-icon" aria-hidden="true"></i></span> </a>
+                        <div id="list-action-user" class="collapse">
+                            <ul class="nav-user-sub">
+                                <li><a href="/admin/settings/account/241121"><i class="fa fa-lg fa-fw fa-user" aria-hidden="true"></i> <span>Tài khoản của bạn</span></a>
+                                </li>
+                                <li><a href="/admin/settings/account/241121"><i class="fa fa-lg fa-fw fa-pencil-square" aria-hidden="true"></i> <span>Đổi mật khẩu</span></a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a target="_blank" href="https://docs.bizweb.vn/quy-dinh-su-dung-87.html"><i class="fa fa-lg fa-fw fa-clone" aria-hidden="true"></i> <span>Điều khoản dịch vụ</span></a>
+                                </li>
+                                <li><a target="_blank" href="https://docs.bizweb.vn/chinh-sach-bao-mat-88.html"><i class="fa fa-lg fa-fw fa-clone" aria-hidden="true"></i> <span>Chính sách bảo mật</span></a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="/admin/authorization/logout"><i class="fa fa-lg fa-fw fa-sign-out" aria-hidden="true"></i> <span>Đăng xuất</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    aside::-webkit-scrollbar {
+                        width: 7px;
+                    }
+            
+                    .tooltip > .tooltip-inner {
+                        font-size: 9px;
+                    }
+            
+                    .tooltip.top > .tooltip-arrow {
+                        border-top: 5px solid black;
+                        margin-top: 20px;
+                        margin-left: 15px;
+                    }
+            
+                    .menu-collapse li {
+                        width: 60px;
+                    }
+            
+                    .menu-collapse li a span {
+                        display: none;
+                    }
+            
+                    .menu-is-selected a::after {
+                        border-color: transparent #E6E8EA transparent transparent;
+                        border-style: solid;
+                        border-width: 6px;
+                        content: "";
+                        height: 0;
+                        pointer-events: none;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        -o-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        width: 0;
+                    }
+            
+                    .helper--kill-transitions {
+                        transition: none;
+                    }
+            
+                    .next-nav__list {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                    }
+            
+                    .next-nav {
+                        z-index: 1;
+                        width: 230px;
+                        /*position: initial;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;*/
+                        /*transition: -webkit-transform 200ms ease;
+                        transition: transform 200ms ease;
+                        transition: transform 200ms ease, -webkit-transform 200ms ease;*/
+                        /*overflow: hidden;*/
+                        color: #cad6e2;
+                    }
+            
+                    .next-nav .text-muted {
+                        color: #cad6e2 !important;
+                    }
+            
+                    .next-nav .text-muted-mod {
+                        color: #cad6e2;
+                    }
+            
+                    .sidebar nav {
+                        padding-top: 0px;
+                    }
+            
+                    .next-nav__panel {
+                        position: absolute;
+                        top: 56px;
+                        left: 0;
+                        bottom: 0;
+                        /*overflow-x: hidden;
+                        overflow-y: auto;*/
+                        -webkit-overflow-scrolling: touch;
+                    }
+            
+                    .next-nav__panel--primary {
+                        /*z-index: 1;*/
+                        width: 230px;
+                        background-color: #32475c;
+                        /*transition: background-color 200ms ease;*/
+                    }
+            
+                    .next-nav__list--primary {
+                        display: -webkit-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-flex-direction: column;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                    }
+            
+                    .next-nav--is-expanded .next-nav__panel--primary {
+                        background-color: #32475c;
+                    }
+            
+                    .next-nav--is-expanded .next-nav__panel--primary nav ul li a .menu-name {
+                        display: none;
+                    }
+            
+                    .next-nav--is-expanded .next-nav__panel--primary nav ul li .link-disabled .menu-name {
+                        display: none;
+                    }
+            
+                    .tooltip-menu {
+                        display: none;
+                    }
+            
+                    .next-nav--is-expanded .next-nav__panel--primary nav ul li a:hover .tooltip-menu, .next-nav--is-expanded .next-nav__panel--primary nav ul li .link-disabled:hover .tooltip-menu {
+                        display: block;
+                        position: absolute;
+                        top: 20%;
+                        background-color: #ecf1f7;
+                        border-radius: 4px;
+                        z-index: 9999;
+                        left: 50px;
+                        color: #8c969f;
+                        line-height: 16px;
+                        padding: 3px 11px 3px 11px;
+                        font-size: 12px;
+                    }
+            
+                    .tooltip-menu i {
+                        border-color: transparent #ecf1f7 transparent transparent;
+                        border-style: solid;
+                        border-width: 4px;
+                        content: "";
+                        height: 0;
+                        pointer-events: none;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        -o-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        width: 0;
+                        left: -8px;
+                    }
+            
+                    .next-nav__panel--secondary {
+                        z-index: 2;
+                        display: none;
+                        width: 174px;
+                        background-color: #2d3e50;
+                        transition: -webkit-transform 200ms ease;
+                        transition: transform 200ms ease;
+                        transition: transform 200ms ease, -webkit-transform 200ms ease;
+                        -webkit-transform: translate3d(240px, 0, 0);
+                        transform: translate3d(240px, 0, 0);
+                    }
+            
+                    .next-nav__panel--secondary-open {
+                        display: block;
+                        -webkit-transform: translate3d(56px, 0, 0);
+                        transform: translate3d(56px, 0, 0);
+                    }
+            
+                    .next-nav__list--secondary {
+                        display: none;
+                        position: absolute;
+                        width: 174px;
+                        -webkit-transform: translate3d(-174px, 0, 0);
+                        transform: translate3d(-174px, 0, 0);
+                        /*transition: -webkit-transform 200ms ease;
+                        transition: transform 200ms ease;
+                        transition: transform 200ms ease, -webkit-transform 200ms ease;*/
+                    }
+            
+                    .next-nav__item {
+                        display: block;
+                        min-height: 36px;
+                        position: relative;
+                    }
+            
+                    .next-nav__item--header {
+                        /*height: 56px;*/
+                        padding: 0 11px 0 11px;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-align-items: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        -webkit-justify-content: space-between;
+                        -ms-flex-pack: justify;
+                        justify-content: space-between;
+                        position: relative;
+                        /*border-bottom: 1px solid #212529;*/
+                    }
+            
+                    .next-nav__list--is-open {
+                        display: block;
+                        -webkit-transform: translate3d(0, 0, 0);
+                        transform: translate3d(0, 0, 0);
+                    }
+            
+                    .next-heading--callout {
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 0.04em;
+                        color: #c3cfd8;
+                    }
+            
+                    .next-nav__item--header > .next-heading--callout {
+                        -webkit-flex: 1;
+                        -ms-flex: 1;
+                        flex: 1;
+                        padding: 10px 0;
+                        border-bottom: 1px solid #32475c;
+                        margin: 0 0;
+                    }
+            
+                    .next-nav__link {
+                        font-weight: 400;
+                        text-transform: initial;
+                        letter-spacing: initial;
+                        font-weight: 500;
+                        color: #d3dbe2;
+                        padding: 0 11px 0 11px;
+                        height: 36px;
+                        display: -webkit-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-align-items: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                        line-height: normal;
+                    }
+            
+                    .has-submenu {
+                        position: relative;
+                    }
+            
+                    .has-submenu a:before {
+                        content: "\f105";
+                        font-family: FontAwesome;
+                        height: 18px;
+                        line-height: 18px;
+                        margin-left: 5px;
+                        text-align: center;
+                        -webkit-transform: none;
+                        -ms-transform: none;
+                        -o-transform: none;
+                        transform: none;
+                        /*-webkit-transition: -webkit-transform .3s;
+                        transition: -webkit-transform .3s;
+                        -o-transition: -o-transform .3s;
+                        transition: transform .3s;
+                        transition: transform .3s,-webkit-transform .3s,-o-transform .3s;*/
+                        width: 18px;
+                        position: absolute;
+                        right: 10px;
+                        top: 8px;
+                        font-size: 16px;
+                    }
+            
+                    .next-nav__link--is-selected {
+                        color: #fff !important;
+                    }
+            
+                    .next-nav__link--is-selected::after {
+                        border-color: transparent #E6E8EA transparent transparent;
+                        border-style: solid;
+                        border-width: 6px;
+                        content: "";
+                        height: 0;
+                        pointer-events: none;
+                        position: absolute;
+                        right: 0;
+                        top: 48%;
+                        -webkit-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        -o-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        width: 0;
+                    }
+            
+                    .sidebar .nav-user .nav {
+                        padding: unset;
+                    }
+            
+                    .sidebar .nav-user .nav li .scroll-down {
+                        padding: unset;
+                    }
+            
+            
+                    .nav-user-sub {
+                        padding: 0;
+                        list-style: none;
+                        background-color: #2D3E51;
+                        border-top: 1px solid #32475c;
+                        margin-bottom: 20px;
+                    }
+            
+                    .nav-user-sub .divider {
+                        border-bottom: 1px solid #32475c;
+                    }
+            
+                    .nav-user-sub li {
+                        line-height: 36px;
+                        padding-left: 29px;
+                    }
+            
+                    .nav-user-sub li a i {
+                        margin-right: 5px;
+                        font-size: 15px;
+                        vertical-align:-6%;
+                    }
+            
+                    .nav-user-sub li:hover, .nav-user-sub li:focus {
+                        background-color: #32475c;
+                    }
+            
+                    .nav-user-sub li:hover a span, .nav-user-sub li:focus a span {
+                        color: #fff !important;
+                    }
+            
+                    .nav-user-sub li:hover a i, .nav-user-sub li:focus a i {
+                        color: #fff;
+                    }
+            
+                    #caret-menu-user {
+                        font-size: 16px;
+                        position: relative;
+                    }
+            
+                    .caret-menu-icon {
+                        position: absolute;
+                        top: 2px;
+                        left: 5px;
+                    }
+            
+                    .caret-menu-icon-down {
+                        position: absolute;
+                        top: 2px;
+                        left: 5px;
+                    }
+            
+                    .submenu-disabled {
+                        margin-left: 10px;
+                        line-height: 36px;
+                    }
+                </style>
+                <script>
+                    addDOMLoadedEvent(function() {
+                        $(document).ready(function() {
+                            $("#list-action-user").on("hide.bs.collapse", function() {
+                                $("#caret-menu-user").html('<i class="fa fa-angle-up caret-menu-icon" aria-hidden="true"></i>');
+                            });
+                            $("#list-action-user").on("show.bs.collapse", function() {
+                                $("#caret-menu-user").html('<i class="fa fa-angle-down caret-menu-icon-down" aria-hidden="true"></i>');
+                            });
+                            if ($(window).height() <= $('.next-nav__list--primary').height()) {
+                                $('.next-nav__panel').height($('.next-nav__list--primary').height());
+                            }
+                        });
+                    });
+                </script>
+            </aside>
+            <div class="page-content clearfix">
+                <div class="page-body">
+                    <a class="btn btn-default nav-toggle" bind-event-click="navDrawer.toggle()"> <i class="fa fa-lg fa-fw fa-bars"></i> </a>
+                    <div class="page-body-render" bind-event-click="navDrawer.close()" id="content">
+                        <style type="text/css">
+                            .note {
+                                list-style: outside none none;
+                                color: #798c9c;
+                                font-weight: normal;
+                                text-transform: none;
+                                padding-bottom: 3px;
+                            }
+                        
+                            .unstyled {
+                                padding: 0;
+                                margin: 0;
+                            }
+                        </style>
+                        <form id="frmAction" method="post">
+                            <input type="hidden" name="AuthenticityToken" value="R8FX/OZx4Tm85PzOIPcSjOnFptIW1ngiMDUMP/ivAMNRzUN344xUt9/sThFbXmL/6c+WqZeO830lF/RdQUzJgw==" />
+                            <input type="hidden" name="returnUrl" value="/admin/collections" />
+                            <input type="hidden" name="id" value="" /> </form>
+                        <div class="modal fade" id="bizweb-modal" data-width="" tabindex="-1" role="dialog"> </div>
+                        <form id="frmRemoveSavedSearch" method="post">
+                            <input type="hidden" name="AuthenticityToken" value="R8FX/OZx4Tm85PzOIPcSjOnFptIW1ngiMDUMP/ivAMNRzUN344xUt9/sThFbXmL/6c+WqZeO830lF/RdQUzJgw==" />
+                            <input type="hidden" name="returnUrl" value="/admin/collections" />
+                            <input type="hidden" name="savedSearchId" value="" /> </form>
+                        <form id="frmFilter" method="get">
+                            <input type="hidden" name="Query" value="" /> </form>
+                        <form id="frmBulkActions" method="get"></form>
+                        <div>
+                            <div class='page-heading page-heading-md'>
+                                <h2 class='header__main'><span class='breadcrumb hidden-xs'><i class='fa fa-tags'></i> </span><span class='title'>Danh mục sản phẩm</span></h2>
+                                <div class="header-right"> <a class="btn btn-default btn-add" href="/admin/collections/create"><span>Thêm mới</span></a> </div>
+                            </div>
+                            <div class="container-fluid-md notifications">
+                                <div class="ajax-notification"><span class="ajax-notification-message"></span><a class='close-notification' onclick='Bizweb.Flash.hide()'><i class='fa fa-times'></i></a>
+                                </div>
+                            </div>
+                            <div class="container-fluid-md">
+                                <div class="panel panel-default has-bulk-actions">
+                                    <div class="filters" context="filterandsavedsearch" define="{filterandsavedsearch: new Bizweb.FilterAndSavedSearch(this,{&quot;type_filter&quot;:&quot;collections&quot;})}">
+                                        <ul class="filter-tab-list overflow-hidden-x" id="filter-tab-list">
+                                            <li class="filter-tab-item" data-tab-index="1"> <a href="/admin/collections" class="filter-tab filter-tab-active">Tất cả danh mục sản phẩm</a> </li>
+                                            <li class="dropdown-container" id="hidden-search" style="display:none"> <a class="dropdown-toggle btn-hidden-search filter-tab" data-toggle="dropdown">
+                                Xem thêm
+                                <span class="caret"></span>
+                            </a>
+                                                <ul class="dropdown-menu arrow-style dropdown-hidden-search pull-right padding-sm" id="dropdown-hidden-search"></ul>
+                                            </li>
+                                        </ul>
+                                        <div class="filter-container">
+                                            <div class="btn-group btn-group-filter next-field__connected-wrapper">
+                                                <div class="next-field--connected--no-flex"> <a class="btn btn-default dropdown-toggle btn-filter">
+                                    Điều kiện lọc
+                                    <span class="caret"></span>
+                                </a>
+                                                    <div class="dropdown-menu arrow-style dropdown-filter">
+                                                        <div class="arrow"></div>
+                                                        <div class="filters">
+                                                            <label class="filter-title">Hiển thị danh mục theo:</label>
+                                                            <div class="filter-content">
+                                                                <select class="form-control form-selectboxit" bind="filterKey" bind-event-change="resetFilter()" id="filter-conditions">
+                                                                    <option value="">Chọn điều kiện lọc...</option>
+                                                                    <option value="visibility">Hiển thị</option>
+                                                                    <option value="collectionType">Loại</option>
+                                                                </select>
+                                                                <div class="inline filter-choose hide" bind-show="filterKey == 'visibility'">
+                                                                    <select class="form-control form-selectboxit filter-select" bind="option">
+                                                                        <option value="">Chọn điều kiện lọc...</option>
+                                                                        <option value="visibility">Hiển thị</option>
+                                                                        <option value="hidden">Ẩn</option>
+                                                                    </select>
+                                                                    <input type="button" class="btn btn-default add-filter filtering-complete" value="Lọc" bind-event-click="submitFilter(this)"> </div>
+                                                                <div class="inline filter-choose hide" bind-show="filterKey == 'collectionType'">
+                                                                    <select class="form-control form-selectboxit filter-select" bind="option">
+                                                                        <option value="">Chọn điều kiện lọc...</option>
+                                                                        <option value="smart">Thông minh</option>
+                                                                        <option value="custom">Thường</option>
+                                                                    </select>
+                                                                    <input type="button" class="btn btn-default add-filter filtering-complete" value="Lọc" bind-event-click="submitFilter(this)"> </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="next-form next-form--full-width">
+                                                    <form action="/admin/collections" bind-event-submit="submitQuery()" method="get">
+                                                        <input type="text" class="form-control form-large search-input" placeholder="Nhập từ khóa tìm kiếm ..." bind="query" bind-event-input="submitQuery()" value=""> </form>
+                                                </div>
+                                                <div class="segmented next-field--connected--no-flex saved-search-actions-next" id="saved-search-actions-next"> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="collections">
+                                        <div define='{bulkActions: new Bizweb.BulkActions(this,{"type":"danh mục"})}' context="bulkActions">
+                                            <div class="panel-body bulk-action-context">
+                                                <div class=" table-responsive form-inline">
+                                                    <table class="table table-hover vert-align" id="all-collections">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="select select-all not-select"> <span><input type="checkbox" class='js-no-dirty all-bulk-action' bind-event-change="addOrRemoveAllBulkActionItems(this)"></span>
+                                                                    <div class="bulk-actions btn-group hide" all-items="3" items-page="50" total-records="3">
+                                                                        <ul>
+                                                                            <li> <span class="selection-count bulk-action-items-count" selected-bulk-action-items="0">
+                                                                    Đã chọn <span class="display-bulk-action-items-count"></span> danh mục </span>
+                                                                            </li>
+                                                                            <li> <span class="dropdown">
+                                                                    <a class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                                        Chọn thao tác
+                                                                        <span class="caret"></span> </a>
+                                                                                <ul class="dropdown-menu arrow-style" role="menu">
+                                                                                    <li><a class="perform-publish" href="javascript:;" bind-event-click="publishItems()" define="{urlBulkActionPublish:'/admin/collections/bulkpublish'}">Hiện</a>
+                                                                                    </li>
+                                                                                    <li><a class="perform-unpublish" href="javascript:;" bind-event-click="unPublishItems()" define="{urlBulkActionUnPublish:'/admin/collections/bulkunpublish'}">Ẩn</a>
+                                                                                    </li>
+                                                                                    <li><a define="{urlBulkActionDelete:'/admin/collections/bulkdelete'}" class="perform-delete" href="javascript:void(0);" bind-event-click="showDeleteItemsModal()">Xóa danh mục</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                                </span>
+                                                                            </li>
+                                                                        </ul> <span class="bulk-select-all">
+                                                            <p class="bulk-action-all-selector">
+                                                                <span class="bulk-action-all"></span> <a class="multipage-selected-all hide" href="javascript:void(0);" bind-event-click="addBulkActionAll()">Chọn tất cả danh mục</a> <a class="clear-multipage-selection hide" href="javascript:void(0);" bind-event-click="removeBulkActionAll()">Bỏ chọn</a> </p>
+                                                                        </span>
+                                                                    </div>
+                                                                </th>
+                                                                <th style="width:50px;"></th>
+                                                                <th width="">Danh mục</th>
+                                                                <th width="60%">Điều kiện</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="select">
+                                                                    <input type="checkbox" value="1098352" name="ids" bind-event-change="addOrRemoveBulkActionItem(1098352,this)" id="bulk-action-1098352" class="bulk-action-item"> </td>
+                                                                <td> <img class="product-thumb product-image-is-blank" src="/assets/images/no-image-50-50.png" /> </td>
+                                                                <td> <a href="/admin/collections/1098352">Sản phẩm nổi bật</a> </td>
+                                                                <td class=""> <span>&mdash;</span> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="select">
+                                                                    <input type="checkbox" value="1098351" name="ids" bind-event-change="addOrRemoveBulkActionItem(1098351,this)" id="bulk-action-1098351" class="bulk-action-item"> </td>
+                                                                <td> <img class="product-thumb product-image-is-blank" src="/assets/images/no-image-50-50.png" /> </td>
+                                                                <td> <a href="/admin/collections/1098351">Sản phẩm khuyến m&#227;i</a> </td>
+                                                                <td class=""> <span>&mdash;</span> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="select">
+                                                                    <input type="checkbox" value="1098350" name="ids" bind-event-change="addOrRemoveBulkActionItem(1098350,this)" id="bulk-action-1098350" class="bulk-action-item"> </td>
+                                                                <td> <img class="product-thumb product-image-is-blank" src="/assets/images/no-image-50-50.png" /> </td>
+                                                                <td> <a href="/admin/collections/1098350">Sản phẩm mới</a> </td>
+                                                                <td class=""> <span>&mdash;</span> </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <div class="t-grid-pager-boder">
+                                                        <div class="t-pager t-reset">
+                                                            <div class="col-xs-5 no-padding">
+                                                                <div class="t-status-text dataTables_info">Hiển thị kết quả từ 1 - 3 trên tổng 3 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script class="modal_source" define="{deleteItemsModal: new Bizweb.Modal(this)}" type="text/html">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
+                                                            <h4 class="modal-title">Bạn chắc chắn muốn xóa các danh mục này?</h4> </div>
+                                                        <div class="modal-body product-option-edit">
+                                                            <p>Thao tác này sẽ xóa các danh mục bạn đã chọn. Thao tác này không thể khôi phục.</p>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <div class="form-actions row">
+                                                                <div class="col-sm-5 pull-right text-right">
+                                                                    <button class="btn btn-default btn-back close-modal" type="button">Hủy</button>
+                                                                    <button class="btn btn-danger btn-delete-bulk-action" type="button" bind-event-click="deleteItems()">Xóa</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui-footer-help">
+                            <div class="ui-footer-help__content">
+                                <div class="ui-footer-help__icon"> <i class="fa fa-question-circle text-muted"></i> </div>
+                                <div class="ui-footer-help__text"> Bạn có thể xem thêm hướng dẫn về quản lý danh mục sản phẩm <a target="_blank" title="quản lý danh mục sản phẩm" href="https://docs.bizweb.vn/gioi-thieu-6.html?utm_campaign=cpn:docs-plm:tool_tip_danh_muc&utm_source=admin&utm_medium=referral&utm_content=fm:text_link-km:-sz:&utm_term=&campaign=quantri">tại đây</a> </div>
+                            </div>
+                        </div>
+                        <div id="global-icon-symbols" data-tg-refresh="global-icon-symbols" data-tg-refresh-always="true" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg">
+                                <symbol id="next-delete" class="icon-symbol--loaded">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" enable-background="new 0 0 12 12">
+                                        <path d="M12 2c0 .5-.4 1-.8 1H.8C.4 3 0 2.5 0 2s.4-1 .8-1H4c0-.5.7-1 1.2-1h1.6C7.3 0 8 .6 8 1h3.2c.4 0 .8.5.8 1zm-1 2.6v6.6c0 .4-.8.8-1.2.8H2.2c-.4 0-1.2-.3-1.2-.8V4.6c0-.1.5-.6.7-.6h8.7c.1 0 .6.5.6.6zM5 6.4c0-.2-.2-.4-.4-.4h-.2c-.2 0-.4.2-.4.4v3.2c0 .2.2.4.4.4h.2c.2 0 .4-.2.4-.4V6.4zm3 0c0-.2-.2-.4-.4-.4h-.2c-.2 0-.4.2-.4.4v3.2c0 .2.2.4.4.4h.2c.2 0 .4-.2.4-.4V6.4z"></path>
+                                    </svg>
+                                </symbol>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bizweb-copyright text-center text-muted">
+                        <p>Bizweb Sky - Nền tảng bán hàng online được sử dụng nhiều nhất Việt Nam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var CKEDITOR_BASEPATH = '/extensions/ckeditor4.6/';
+    </script>
+    <script>
+        if (typeof ticketData == "undefined" || typeof ticketData != "object") {
+            ticketData = {};
+        }
+        ticketData.TicketName = 'Tiến' + ' ' + 'Diễn';
+        ticketData.TicketEmail = 'vodien66466@gmail.com';
+        ticketData.TicketSite = 'tien-dien' + '.bizwebvietnam.net';
+    </script>
+    <script src="js/dist/default.min.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.timestamp = '698611347';
+    </script>
+    <div>
+        <div class="section-footer">
+            <script type="text/javascript">
+                Page();
+            </script>
+        </div>
+    </div>
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WM8XKV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WM8XKV');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript">
+        mixpanel.identify("224111");
+        mixpanel.people.set({
+            "$first_name": "Diễn",
+            "$last_name": "Tiến",
+            "$email": "vodien66466@gmail.com",
+            "$phone": "0918238816",
+            "Address": "ko",
+            "$created": "2017-06-11 16:33:03",
+            "$last_login": new Date(),
+        });
+    </script>
+</body>
+
+</html>
